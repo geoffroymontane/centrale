@@ -24,7 +24,7 @@ class FilmRepository:
         return film.save()
 
     @staticmethod
-    def create(title, author, date):
+    def create(title, author, date, type, image):
         """ Create a new film """
-        film = Film(title=title, author=author, date=date)
+        film = Film(title=title, author=author, date=date, type=type, image=image)
         return film.save()
