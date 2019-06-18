@@ -1,0 +1,20 @@
+Return an film key information based on his name
+---
+tags:
+  - film
+parameters:
+  - name: title
+    in: path
+    type: string
+    description: the title of the film
+  - name: date
+    in: path
+    type: int
+    description: the date of the film
+  - name: author 
+    in: path
+    type: string
+    description: the author of the film
+responses:
+  200:
+    description: The film's information were successfully retrieved
