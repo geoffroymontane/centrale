@@ -1,0 +1,7 @@
+Return all films
+---
+tags:
+  - film
+responses:
+  200:
+    description: The films information were successfully retrieved
