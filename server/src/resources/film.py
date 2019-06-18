@@ -28,3 +28,14 @@ class FilmResource(Resource):
             title=title, date=date, author=author
         )
         return jsonify({"film": film.json})
+
+    @staticmethod
+    @parse_params(
+        Argument("date", location="json", required=True, help="The date of the film.")
+    )
+    @swag_from("../swagger/film/PUT.yml")
+    def put(title, date, author):
+        """ Update a film based on the sent information """
+        repository = FilmRepository()
+        film = repository.update(title=title, date=date, author=author)
+        return jsonify({"film": film.json})

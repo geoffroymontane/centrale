@@ -15,7 +15,7 @@ class Film(db.Model, BaseModel, metaclass=MetaBaseModel):
     author = db.Column(db.String(300), nullable=True)
 
     def __init__(self, title, date, author):
-        """ Create a new Title """
+        """ Create a new Film """
         self.title = title
         self.date = date
         self.author = author
