@@ -19,6 +19,13 @@ parameters:
         date:
           type: integer
           description: The date of the film
+        type:
+          type: string
+          description: The type of the film
+        image:
+          type: string
+          description: The image of the film
+
 responses:
   200:
     description: The film was successfully created

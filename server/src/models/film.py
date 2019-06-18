@@ -13,9 +13,13 @@ class Film(db.Model, BaseModel, metaclass=MetaBaseModel):
     title = db.Column(db.String(300), primary_key=True)
     author = db.Column(db.String(300), primary_key=True)
     date = db.Column(db.Integer())
+    type = db.Column(db.String(300))
+    image = db.Column(db.String(300))
 
-    def __init__(self, title, date, author):
+    def __init__(self, title, author, date, type, image):
         """ Create a new Film """
         self.title = title
-        self.date = date
         self.author = author
+        self.date = date
+        self.type = type
+        self.image=image
