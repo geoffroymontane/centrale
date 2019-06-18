@@ -16,16 +16,19 @@ class FilmResource(Resource):
 
     @staticmethod
     @swag_from("../swagger/film/GET.yml")
-    def get(title, date, author):
-        film = FilmRepository.get(title=title, date=date, author=author)
+    def get(title, author):
+        film = FilmRepository.get(title=title, author=author)
         return jsonify({"film": film.json})
 
     @staticmethod
+    @parse_params(
+        Argument("date", location="json", required=True, help="The date of the film.")
+    )
     @swag_from("../swagger/film/POST.yml")
-    def post(title, date, author):
+    def post(title, author, date):
         """ Create a film based on the sent information """
         film = FilmRepository.create(
-            title=title, date=date, author=author
+            title=title, author=author, date=date,
         )
         return jsonify({"film": film.json})
 
@@ -34,8 +37,8 @@ class FilmResource(Resource):
         Argument("date", location="json", required=True, help="The date of the film.")
     )
     @swag_from("../swagger/film/PUT.yml")
-    def put(title, date, author):
+    def put(title, author, date):
         """ Update a film based on the sent information """
         repository = FilmRepository()
-        film = repository.update(title=title, date=date, author=author)
+        film = repository.update(title=title, author=author, date=date)
         return jsonify({"film": film.json})

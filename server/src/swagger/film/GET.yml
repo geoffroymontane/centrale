@@ -7,10 +7,6 @@ parameters:
     in: path
     type: string
     description: the title of the film
-  - name: date 
-    in: path
-    type: int
-    description: the date of the film 
   - name: author 
     in: path
     type: string

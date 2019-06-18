@@ -7,11 +7,11 @@ class FilmRepository:
     """ The repository for the film model """
 
     @staticmethod
-    def get(title, date, author):
-        """ Query a film by title and date and author """
-        return Film.query.filter_by(title=title, date=date, author=author).one()
+    def get(title, author):
+        """ Query a film by title and date """
+        return Film.query.filter_by(title=title, author=author).one()
 
-    def update(self, title, date, author):
+    def update(self, title, author, date):
         """ Update a film's date"""
         film = self.get(title, author)
         film.date = date
@@ -19,7 +19,7 @@ class FilmRepository:
         return film.save()
 
     @staticmethod
-    def create(title, date, author):
+    def create(title, author, date):
         """ Create a new film """
-        film = Film(title=title, date=date, author=author)
+        film = Film(title=title, author=author, date=date,)
         return film.save()
