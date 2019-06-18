@@ -11,6 +11,11 @@ class FilmRepository:
         """ Query a film by title and date """
         return Film.query.filter_by(title=title, author=author).one()
 
+    @staticmethod
+    def getAll():
+        """ Get all films """
+        return Film.query.all()
+
     def update(self, title, author, date):
         """ Update a film's date"""
         film = self.get(title, author)
@@ -21,5 +26,5 @@ class FilmRepository:
     @staticmethod
     def create(title, author, date):
         """ Create a new film """
-        film = Film(title=title, author=author, date=date,)
+        film = Film(title=title, author=author, date=date)
         return film.save()

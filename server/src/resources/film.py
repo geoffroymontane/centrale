@@ -10,6 +10,8 @@ from flask_restful.reqparse import Argument
 from repositories import FilmRepository
 from util import parse_params
 
+import json
+
 
 class FilmResource(Resource):
     """ Verbs relative to the films """
@@ -42,3 +44,16 @@ class FilmResource(Resource):
         repository = FilmRepository()
         film = repository.update(title=title, author=author, date=date)
         return jsonify({"film": film.json})
+
+class FilmsResource(Resource):
+
+	@staticmethod
+	@swag_from("../swagger/films/GET.yml")
+	def get():
+		films = FilmRepository.getAll()
+		_str = "["
+		for i in range(len(films)):
+			_str += json.dumps(films[i].json) + ","
+		_str = _str[: len(_str) - 1] + "]"
+
+		return _str
