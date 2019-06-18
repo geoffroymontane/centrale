@@ -11,14 +11,10 @@ parameters:
     in: path
     type: int
     description: the date of the film
-  - name: body
-    in: body
-    schema:
-      type: object
-      properties:
-	author:
-          type: string 
-          description: The author of the film
+  - name: author
+    in: path
+    type: string
+    description: The author of the film
 responses:
   200:
     description: The film was successfully created

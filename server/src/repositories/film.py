@@ -9,7 +9,7 @@ class FilmRepository:
     @staticmethod
     def get(title, date, author):
         """ Query a film by title and date and author """
-        return Film.query.filter_by(tile=title, date=date, author=author).one()
+        return Film.query.filter_by(title=title, date=date, author=author).one()
 
     def update(self, title, date, author):
         """ Update a film's date"""
