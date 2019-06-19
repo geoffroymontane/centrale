@@ -1,4 +1,5 @@
 body {
+	font-family: 'Didact Gothic', sans-serif;
 	background-color: black;
 	margin: 0;
 	padding: 0;
@@ -48,6 +49,7 @@ h1 {
 }
 
 #films {
+	width : -webkit-fit-content;
 	margin: auto;
 	color: white;
 }
