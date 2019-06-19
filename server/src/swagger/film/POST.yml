@@ -25,6 +25,12 @@ parameters:
         image:
           type: string
           description: The image of the film
+        synopsis:
+          type: string
+          description: The synopsis of the film
+        country:
+          type: string
+          description: the country of the film
 
 responses:
   200:
