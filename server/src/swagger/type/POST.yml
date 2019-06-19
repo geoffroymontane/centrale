@@ -1,0 +1,12 @@
+Create a type
+---
+tags:
+  - type
+parameters:
+  - name: typename
+    in: path
+    type: string
+    description: the name of the type 
+responses:
+  200:
+    description: 

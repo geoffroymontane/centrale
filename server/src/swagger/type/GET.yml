@@ -1,0 +1,7 @@
+Return all types
+---
+tags:
+  - type
+responses:
+  200:
+    description: The types were successfully retrieved
