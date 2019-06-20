@@ -15,5 +15,5 @@ Api(FILM_BLUEPRINT).add_resource(
 
 FILMS_BLUEPRINT = Blueprint("films", __name__)
 Api(FILMS_BLUEPRINT).add_resource(
-    FilmsResource, "/films"
+    FilmsResource, "/films/<string:type>/<string:author>"
 )

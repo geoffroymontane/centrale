@@ -2,6 +2,15 @@ Return all films
 ---
 tags:
   - film
+parameters:
+  - name: author 
+    in: path
+    type: string
+    description: the author of the film
+  - name: type 
+    in: path
+    type: string
+    description: the type of the film
 responses:
   200:
     description: The films information were successfully retrieved

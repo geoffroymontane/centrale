@@ -32,11 +32,17 @@ class FilmResource(Resource):
     @parse_params(
         Argument("image", location="json", required=True, help="The image of the film.")
     )
+    @parse_params(
+        Argument("synopsis", location="json", required=True, help="The synopsis of the film.")
+    )
+    @parse_params(
+        Argument("country", location="json", required=True, help="The country of the film.")
+    )
     @swag_from("../swagger/film/POST.yml")
-    def post(title, author, date, type,image):
+    def post(title, author, date, type,image, synopsis, country):
         """ Create a film based on the sent information """
         film = FilmRepository.create(
-            title=title, author=author, date=date, type=type, image=image
+            title=title, author=author, date=date, type=type, image=image, synopsis=synopsis, country=country
         )
         return jsonify({"film": film.json})
 
