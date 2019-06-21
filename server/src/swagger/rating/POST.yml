@@ -1,30 +1,28 @@
-Create an user based on the sent information
+Create an rating based on the sent information
 ---
 tags:
-  - user
+  - rating
 parameters:
-  - name: last_name
+  - name: userfirstname
+    in: path
+    type: string
+    description: the first name of the user
+  - name: userlastname
     in: path
     type: string
     description: the last name of the user
-  - name: first_name
+  - name: filmtitle
     in: path
     type: string
-    description: the last name of the user
-  - name: body
-    in: body
-    schema:
-      type: object
-      properties:
-        age:
-          type: integer
-          description: The age of the user
+    description: the title of the film rated
+  - name: filmauthor
+    in: path
+    type: string
+    description: the author of the film rated
+  - name: rating
+    in: path
+    type: integer
+    description: the note attributed
 responses:
   200:
-    description: The user was successfully created
-    schema:
-      example:
-        user:
-          last_name: Doe
-          first_name: John
-          age: 30
+    description: The rating's information were successfully retrieved

@@ -1,22 +1,28 @@
-Return an user key information based on his name
+Return a rating key information based on the name of the user and the name of the film
 ---
 tags:
-  - user
+  - rating
 parameters:
-  - name: last_name
-    in: path
-    type: string
-    description: the last name of the user
-  - name: first_name
+  - name: userfirstname
     in: path
     type: string
     description: the first name of the user
+  - name: userlastname
+    in: path
+    type: string
+    description: the last name of the user
+  - name: filmtitle
+    in: path
+    type: string
+    description: the title of the film rated
+  - name: filmauthor
+    in: path
+    type: string
+    description: the author of the film rated
+  - name: rating
+    in: path
+    type: integer
+    description: the note attributed
 responses:
   200:
-    description: The user's information were successfully retrieved
-    schema:
-      example:
-        user:
-          last_name: Doe
-          first_name: John
-          age: 30
+    description: The rating's information were successfully retrieved
